@@ -11,7 +11,9 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
 dependencies:
   override:
-    - echo y | android update sdk --no-ui --all --filter android-23,build-tools-23.0.2
+    - echo y | android update sdk --no-ui --all --filter "tools"
+    - echo y | android update sdk --no-ui --all --filter "android-23"
+    - echo y | android update sdk --no-ui --all --filter "build-tools-23.0.2"
 test:
   override:
     - echo "Nothing to do here"
