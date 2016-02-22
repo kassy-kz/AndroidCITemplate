@@ -5,4 +5,4 @@ machine:
     ANDROID_HOME: /usr/local/android-sdk-linux
 test:
   override:
-    - ./gradlew assembleDebug
+    - ./gradlew assembleDebug --stacktrace
