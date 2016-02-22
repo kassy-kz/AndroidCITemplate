@@ -22,5 +22,5 @@ deployment:
   master:
     branch: master
     commands:
-      - ./gradlew assembleRelease
+      - ./gradlew assembleDebug
       - curl -F "file=@app/build/outputs/apk/app-release-unsigned.apk" -F "token=8276e1970d40376fedf5ee797a4dcee9ad39739b" -F "message=sample" https://deploygate.com/api/users/kassy_kz/apps
