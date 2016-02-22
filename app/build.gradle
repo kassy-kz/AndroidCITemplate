@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dexOptions {
+        // memo: http://developer.covelline.com/2015/06/circle-ci/
+        javaMaxHeapSize "4g"
+        preDexLibraries !(System.getenv()["CIRCLECI"] as boolean)
+    }
 }
 
 dependencies {
