@@ -14,6 +14,7 @@ dependencies:
     - echo y | android update sdk --no-ui --all --filter "tools"
     - echo y | android update sdk --no-ui --all --filter "android-23"
     - echo y | android update sdk --no-ui --all --filter "build-tools-23.0.2"
+    - echo y | android update sdk --no-ui --all --filter "extra-google-google_play_services"
 test:
   override:
     - echo "Nothing to do here"
