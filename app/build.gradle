@@ -12,7 +12,16 @@ android {
         versionName "1.0"
     }
     buildTypes {
+        debug {
+            manifestPlaceholders = [
+                    mapsApiKey: System.getenv('ANDROID_MAPS_API_KEY') != null ? System.getenv('ANDROID_MAPS_API_KEY') : android_maps_api_key
+            ]
+        }
+
         release {
+            manifestPlaceholders = [
+                    mapsApiKey: System.getenv('ANDROID_MAPS_API_KEY') != null ? System.getenv('ANDROID_MAPS_API_KEY') : android_maps_api_key
+            ]
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
