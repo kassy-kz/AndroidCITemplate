@@ -16,6 +16,8 @@ android {
             manifestPlaceholders = [
                     mapsApiKey: System.getenv('ANDROID_MAPS_API_KEY') != null ? System.getenv('ANDROID_MAPS_API_KEY') : android_maps_api_key
             ]
+            println 'mapsapikey: ' + System.getenv('ANDROID_MAPS_API_KEY')
+            println android_maps_api_key
         }
 
         release {
