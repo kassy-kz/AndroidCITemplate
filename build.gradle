@@ -16,6 +16,16 @@ allprojects {
     repositories {
         jcenter()
     }
+    File propertyFile = rootProject.file("private.properties")
+    if (propertyFile.exists()) {
+        Properties properties = new Properties()
+        propertyFile.withInputStream {
+            properties.load(it)
+        }
+        properties.entrySet().each {
+            project.ext.set(it.key, it.value)
+        }
+    }
 }
 
 task clean(type: Delete) {

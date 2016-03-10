@@ -16,17 +16,16 @@ android {
     signingConfigs {
         debug {
             storeFile rootProject.file("sign/circleci_android_debug.jks")
-            storePassword System.getenv("DEBUG_KEYSTORE_PASS")
-            println "password" + System.getenv("DEBUG_KEYSTORE_PASS")
+            storePassword System.getenv("DEBUG_KEYSTORE_PASS") != null ? System.getenv("DEBUG_KEYSTORE_PASS") : debug_keystore_pass
             keyAlias "kassy_kz"
-            keyPassword System.getenv("DEBUG_KEYSTORE_ALIAS_PASS")
+            keyPassword System.getenv("DEBUG_KEYSTORE_ALIAS_PASS") != null ? System.getenv("DEBUG_KEYSTORE_ALIAS_PASS") : debug_keystore_alias_pass
         }
 
         release {
             storeFile rootProject.file("sign/circleci_android_release.jks")
-            storePassword System.getenv("RELEASE_KEYSTORE_PASS")
+            storePassword System.getenv("RELEASE_KEYSTORE_PASS") != null ? System.getenv("RELEASE_KEYSTORE_PASS") : debug_keystore_pass
             keyAlias "kassy_kz"
-            keyPassword System.getenv("RELEASE_KEYSTORE_ALIAS_PASS")
+            keyPassword System.getenv("RELEASE_KEYSTORE_ALIAS_PASS") != null ? System.getenv("RELEASE_KEYSTORE_ALIAS_PASS") : debug_keystore_alias_pass
         }
     }
 
